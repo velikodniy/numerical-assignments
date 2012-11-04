@@ -1,0 +1,28 @@
+\include{header}
+\include{commands}
+
+\begin{document}
+
+\include{title}         % Титульный лист
+\include{infopage}      % Страница с выходными данными
+
+{\pagestyle{plain}
+\include{preface}       % Введение
+}
+
+\include{01} % Вычисление значений функций
+\include{02} % Интерполяция
+\include{03} % Решение алгебраических и трансцендентных уравнений
+\include{04} % Решение задач линейной алгебры
+\include{05} % Методы оптимизации
+\include{06} % Численное дифференцирование
+\include{07} % Численное интегрирование
+\include{08} % Решение обыкновенных дифференциальных уравнений
+\include{09} % Решение дифференциальных уравнений в частных производных
+
+\simplefancy
+\include{afterword}      % Заключение
+\printindex{}            % Индекс
+\tableofcontents         % Оглавление
+\label{LASTPAGE}
+\end{document}
