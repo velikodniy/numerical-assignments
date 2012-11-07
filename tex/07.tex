@@ -4,27 +4,39 @@
   электронных вычислительных машин.}
 
 Оценим погрешность на одном из подотрезков.
-
 \[
 \Delta I_i = \int_{x_i}^{x_i+\Delta x} (f(x) - f(x_i))\,dx.
 \]
 
-Выполним замену $t = x - x_i$, тогда получаем
-
+Выполнив замену $t = x - x_i$ получим
 \[
-Delta I_i = \int_0^{\Delta x} (f(t + x_i) - f(x_i))\, dt.
+\Delta I_i = \int_0^{\Delta x} (f(t + x_i) - f(x_i))\, dt.
 \]
 
 Разложим функцию $f$ в ряд Тейлора в окрестности точки $x_i$:
-
 \[
     f(t + x_i) = f(x_i) + f'(x_i)t + f''(x_i)t^2 + O(t^3).
 \]
 
 Подставляя в интеграл, получаем
-
 \begin{multline*}
-\Delta I_i = \int_0^{\Delta x} (f(x_i) + f'(x_i)t + f''(x_i)t^2 + O(t^3) - f(x_i))\,dt =\\
-\int_0^{\Delta x}(f'(x_i)t + f''(x_i)t^2 + O(t^3))\,dt=\\
-\frac12 f(x_i) \bigl. t^2 \bigr|_{0}^{\Delta x} + 
+\Delta I_i = \int_0^{\Delta x} \left(f(x_i) + f'(x_i)t + f''(x_i)t^2 + O(t^3) - f(x_i)\right)\,dt =\\
+=\int_0^{\Delta x}\left(f'(x_i)t + f''(x_i)t^2 + O(t^3)\right)\,dt=\\
+=\frac12 f'(x_i) \bigl. t^2 \bigr|_{0}^{\Delta x} + \frac13 f''(x) \bigl. t^3 \bigr|_{0}^{\Delta x} +  \bigl.O(t^4) \bigr|_{0}^{\Delta x}=\\
+=\frac12 f'(x_i) \Delta x^2 + \frac13 f''(x) \Delta x^3 + O(\Delta x^4).
 \end{multline*}
+
+Так как $f'(x_i)$ и $f''(x_i)$ — константы, их можно внести под знак O. Тогда
+\[
+\Delta I_i = O(\Delta x^2).
+\]
+
+Погрешность на всём отрезке $[a, b]$ будет складываться из погрешностей отдельных подотрезков
+\[
+\Delta I = \sum_{i=0}^{N-1}\Delta I_i = \sum_{i=0}^{N-1}O(\Delta x^2) = N O(\Delta x^2) = O((N \Delta x) \Delta x) = O((b-a)\Delta x).
+\]
+
+Так как $b-a$ — константа, то
+\[
+\Delta I = O(\Delta x).
+\]
