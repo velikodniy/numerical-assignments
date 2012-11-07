@@ -1,5 +1,8 @@
 \section{Численное интегрирование}
 
+\Aim{Исследовать методы численного интегрирования с помощью
+  электронных вычислительных машин.}
+
 Оценим погрешность на одном из подотрезков.
 
 \[
@@ -20,8 +23,8 @@ Delta I_i = \int_0^{\Delta x} (f(t + x_i) - f(x_i))\, dt.
 
 Подставляя в интеграл, получаем
 
-\[
-\Delta I_i = \int_0^{\Delta x} (f(x_i) + f'(x_i)t + f''(x_i)t^2 + O(t^3) - f(x_i))\,dt =
-\int_0^{\Delta x}(f'(x_i)t + f''(x_i)t^2 + O(t^3))\,dt=
-\frac12 f(x_i) \bigl t^2 \bigr|_{0}^{\Delta x} + 
-\]
+\begin{multline*}
+\Delta I_i = \int_0^{\Delta x} (f(x_i) + f'(x_i)t + f''(x_i)t^2 + O(t^3) - f(x_i))\,dt =\\
+\int_0^{\Delta x}(f'(x_i)t + f''(x_i)t^2 + O(t^3))\,dt=\\
+\frac12 f(x_i) \bigl. t^2 \bigr|_{0}^{\Delta x} + 
+\end{multline*}
