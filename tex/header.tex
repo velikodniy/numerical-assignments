@@ -34,22 +34,20 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{unicode-math}
-%\setmathfont{Asana Math}
-%\setmathfont{xits-math.otf}
-\setmathfont{texgyrepagella-math.otf}
+\setmathfont{TG Pagella Math}
 
 %%% Шрифты документа %%%
 \usepackage{fontspec}					% Использовать OTF/TTF
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont{Charis SIL}
-\setsansfont{Liberation Sans}
-\setmonofont{Liberation Mono}
 %\defaultfontfeatures{Scale=MatchLowercase, Mapping=tex-text}
+\setmainfont{Charis SIL}
+\setsansfont[Scale=0.9]{Liberation Sans}
+\setmonofont[Scale=0.9]{Liberation Mono}
 
 %%% Семейства шрифтов %%%
-\newfontfamily\footfont{Droid Sans} 
+\newfontfamily\footfont[Scale=0.85]{Droid Sans} 
 \newfontfamily\titlefont{Ubuntu} 
-\newfontfamily\lstfont{Ubuntu}
+\newfontfamily\lstfont[Scale=0.9]{Ubuntu}
 
 %%% Графика %%%
 \usepackage{graphicx}
@@ -120,6 +118,7 @@
   pdftitle={\Title},
   pdfauthor={\Author}
 }
+\urlstyle{same}
 
 %%% Локализация %%%
 \usepackage{xunicode}
