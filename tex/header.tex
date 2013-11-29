@@ -32,22 +32,29 @@
 
 %%% Математические шрифты и окружения%%%
 \usepackage{amsmath}
+
+%%% Математические шрифты %%%
 \usepackage{amssymb}
-\usepackage{unicode-math}
-\setmathfont{TG Pagella Math}
+\usepackage{mathspec}
+\usepackage[charter]{mathdesign}
+
+%%% Специальные символы %%%
+\usepackage{gensymb}
 
 %%% Шрифты документа %%%
 \usepackage{fontspec}					% Использовать OTF/TTF
-\defaultfontfeatures{Mapping=tex-text}
-%\defaultfontfeatures{Scale=MatchLowercase, Mapping=tex-text}
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
 \setmainfont{Charis SIL}
-\setsansfont[Scale=0.9]{Liberation Sans}
-\setmonofont[Scale=0.9]{Liberation Mono}
+\setsansfont{Linux Biolinum O}
+\setmonofont{Ubuntu Mono}
+
+%%% XeTeX fix
+\newfontfamily{\cyrillicfont}{Charis SIL}
 
 %%% Семейства шрифтов %%%
-\newfontfamily\footfont[Scale=0.85]{Droid Sans} 
+\newfontfamily\footfont{Ubuntu}
 \newfontfamily\titlefont{Ubuntu} 
-\newfontfamily\lstfont[Scale=0.9]{Ubuntu}
+\newfontfamily\lstfont{Ubuntu}
 
 %%% Графика %%%
 \usepackage{graphicx}
@@ -139,3 +146,17 @@
 %%% Индекс %%%
 \usepackage{makeidx}
 \makeindex
+
+%%% Библиография
+\bibliographystyle{ugost2008s}
+
+%%% Нумерация разделов %%%
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+%\usepackage{titlesec}
+%\titleformat*{\subsection}
+%             {\normalfont\normalsize\bfseries\lstfont}
+%\titlespacing*{\subsection}
+%              {\parindent}
+%              {0.3em}
+%              {0.3em}
